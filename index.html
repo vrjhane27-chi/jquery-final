@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="/form.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        Welcome to Form Validation
+       <button id="view" onclick="openList()">View Registered Users</button></header>
+ 
+
+<div id="user-list" class="form-box">
+    <h2>Registered Users</h2>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Age</th>
+                <th>Birthday</th>
+                <th>Email</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Auto-generated rows -->
+        </tbody>
+    </table>
+</div>
+
+    <div class="buttons" id="buttons">
+        <button id="reg" onclick="openReg()">Register</button>
+        <button id="val" onclick="openVal()">Validate</button>
+    </div>
+    <div id="register" class="form-box">
+        <form id="reg-form" action="">
+            <label for="student-id">Student ID</label>
+            <input type="text" id="student-id" placeholder="e.g 00-00000"  pattern="[0-9]{2}-[0-9]{5}" required>
+            <label for="lName">Last Name</label>
+            <input type="text" id="lName" required>
+            <label for="fName">First Name</label>
+            <input type="text" id="fName" required>
+            <label for="mName">Middle Name</label>
+            <input type="text" id="mName" required>
+            <label for="age">Age</label>
+            <input type="number" id="age" required>
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" required>
+            <span id="birthday-error" style="color:red; font-size:13px;"></span>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <span id="email-error" style="color:red; font-size:13px;"></span>
+            <label for="contact-no">Contact Number</label>
+            <input type="number" id="contact-no"  required>
+            <span id="number-error" style="color:red; font-size:13px;"></span>
+            <button type="submit">Submit</button>
+            <a href="#" id="link-val" onclick="linkVal()">Validate</a>
+        </form>
+    </div>
+    
+    <div id="validate" class="form-box">
+
+        <form id="val-form" action="">
+                    <h1 style="font-size: 20px;">Validate if you're Enrolled</h1>
+            <label for="stId">Student Id</label>
+            <input type="text" id="stId" placeholder="e.g 00-00000"  pattern="[0-9]{2}-[0-9]{5}" required>
+            <button type="submit">Validate</button>
+            <a href="#" id="link-reg" onclick="linkReg()">Not Registered? Register Here</a>
+        </form>
+    </div>
+
+<script src="/form.js"></script>
+
+</body>
+</html>
